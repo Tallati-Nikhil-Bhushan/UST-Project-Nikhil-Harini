@@ -1,0 +1,129 @@
+.gad7-form {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.gad7-form h1 {
+    text-align: center;
+    color: #4a90e2;
+    margin-bottom: 1.5rem;
+}
+
+.question-container {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+}
+
+.question-label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.option-label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    flex: 1;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.green {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.green.hovered {
+    background-color: #c3e6cb;
+}
+
+.green.selected {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.yellow {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.yellow.hovered {
+    background-color: #ffeeba;
+}
+
+.yellow.selected {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.orange {
+    background-color: #ffe5b4;
+    color: #8a6d3b;
+}
+
+.orange.hovered {
+    background-color: #ffd08a;
+}
+
+.orange.selected {
+    background-color: #ff8500;
+    color: #fff;
+}
+
+.red {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.red.hovered {
+    background-color: #f5c6cb;
+}
+
+.red.selected {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    color: #fff;
+    background: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 1.5rem;
+}
+
+.submit-button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    background: #2a5a8b;
+    transform: translateY(0);
+}

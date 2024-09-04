@@ -1,0 +1,31 @@
+<div class="depression-dialog-overlay" (click)="closeDialog()"></div>
+<div class="depression-dialog">
+    <div class="dialog-header">
+        <h2>{{ depressionLevel }}</h2>
+        <button class="close-button" (click)="closeDialog()">×</button>
+    </div>
+    <div class="dialog-content">
+        <p *ngIf="depressionLevel === 'No Depression'">
+            You have no signs of depression.
+        </p>
+        <p *ngIf="depressionLevel === 'Mild Depression'">
+            You have mild signs of depression. Consider consulting with a mental health professional if you feel necessary.
+        </p>
+        <p *ngIf="depressionLevel === 'Moderate Depression'">
+            You have moderate signs of depression. It's recommended to seek advice from a mental health professional.
+        </p>
+        <p *ngIf="depressionLevel === 'Moderate Severe Depression'">
+            You have moderate-severe signs of depression. Professional help is strongly advised.
+        </p>
+        <p *ngIf="depressionLevel === 'Severe Depression'">
+            You have severe signs of depression. Immediate professional help is necessary.
+        </p>
+    </div>
+    <div class="dialog-content">
+      <img [src]="depressionImage" alt="{{ depressionLevel }}" class="depression-image">
+      <p>{{ depressionMessage }}</p>
+  </div>
+    <div class="dialog-footer">
+        <button (click)="redirectToArticles()" class="dialog-button">Read Articles</button>
+    </div>
+</div>

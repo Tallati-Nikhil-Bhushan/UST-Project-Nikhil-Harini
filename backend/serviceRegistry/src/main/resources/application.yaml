@@ -1,0 +1,21 @@
+#spring.application.name=serviceRegistry
+#server.port=8761
+#
+#eureka.instance.hostname=localhost
+#eureka.client.fetch-registry=false
+#eureka.client.register-with-eureka=false
+
+spring:
+  application:
+    name: serviceRegistry
+    
+server:
+      port: 8761
+    
+eureka:
+  client:
+  #you don't register the Service Discovery in the Service Discovery!
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0

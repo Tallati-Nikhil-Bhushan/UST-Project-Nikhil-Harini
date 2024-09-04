@@ -1,0 +1,50 @@
+<!-- <div class="wrapper">
+    <div class="container-fluid p-0">
+        <div class="row g-0 vh-100">
+            <div class="col-md-4 d-flex flex-column">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <app-fitness></app-fitness>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <app-diet></app-diet>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex flex-column">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <app-foodlog></app-foodlog>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="navigations">
+    <div class="navigationContainer">
+        <div><button class="navigationButton" (click)="changeDashboardContent(1)">Fitness</button></div>
+        <div><button class="navigationButton" (click)="changeDashboardContent(2)">Diet</button></div>
+        <div><button class="navigationButton" (click)="changeDashboardContent(3)">Mental Health</button></div>
+    </div>
+</div>
+<div class="pages">
+    <div class="pageContainer" [ngSwitch]="contentId">
+        <ng-container *ngSwitchCase="1">
+            <app-fitness />
+        </ng-container>
+        <ng-container *ngSwitchCase="2">
+            <app-diet />
+        </ng-container>
+        <ng-container *ngSwitchCase="3">
+            <app-mental-health />
+        </ng-container>
+        <ng-container *ngSwitchDefault="">
+            <app-fitness></app-fitness>
+        </ng-container>
+    </div>
+</div>

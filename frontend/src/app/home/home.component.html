@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellnessHub</title>
+    <!-- <link rel="stylesheet" href="../home/home.component.css"> -->
+</head>
+
+<body class="d-flex text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h1 class="float-md-left mb-3">WellnessHub</h1>
+                <nav class="nav nav-masthead justify-content-center float-md-right">
+                    <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                    <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+                    
+                    <!-- <% if(!currentUser) { %> -->
+                    <a class="nav-link" routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+                    <a class="nav-link" routerLink="/register" *ngIf="!isLoggedIn">Register</a>
+                    <a *ngIf="isLoggedIn" class="nav-link" (click)="logout()">Logout</a>
+                </nav>
+            </div>
+        </header>
+        <main class="px-3">
+            <h1>WellnessHub</h1>
+            <p class="lead"> Welcome to WellnessHub! <br> Wellness Hub is your all-in-one platform for holistic
+                well-being, offering personalized guidance on fitness, balanced nutrition, and mental health.
+                Designed for busy individuals, our app provides quick, easy-to-follow routines that seamlessly integrate
+                into your daily life. Whether you're looking to strengthen your body, maintain a healthy diet, or boost
+                your mental wellness, Wellness Hub delivers tailored solutions that fit your unique lifestyle. Let us
+                help you live a healthier, happier life—without the stress.</p>
+            <a routerLink="/dashboard" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">View
+                Dashboard</a>
+        </main>
+
+        <footer class="mt-auto text-white-50">
+            <p>&copy; 2024 </p>
+        </footer>
+    </div>
+</body>
+
+</html>

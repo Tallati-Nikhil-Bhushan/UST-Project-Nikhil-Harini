@@ -1,0 +1,20 @@
+<div *ngIf="isDialogOpen" class="anxiety-dialog-overlay" (click)="closeDialog()"></div>
+<div *ngIf="isDialogOpen" class="anxiety-dialog">
+    <div class="dialog-header">
+        <h2>{{ anxietyLevel }}</h2>
+        <button class="close-button" (click)="closeDialog()">×</button>
+    </div>
+    <div class="dialog-content">
+        <p *ngIf="anxietyLevel === 'No Anxiety'">You have no signs of Anxiety.</p>
+        <p *ngIf="anxietyLevel === 'Mild Anxiety'">You have mild signs of anxiety. Consider consulting with a mental health professional if you feel necessary.</p>
+        <p *ngIf="anxietyLevel === 'Moderate Anxiety'">You have moderate signs of anxiety. It's recommended to seek advice from a mental health professional.</p>
+        <p *ngIf="anxietyLevel === 'Severe Anxiety'">You have severe signs of anxiety. Immediate professional help is necessary.</p>
+    </div>
+    <div class="dialog-content">
+        <img [src]="anxietyImage" alt="{{ anxietyLevel }} Image" class="anxiety-image">
+        <p>{{ anxietyMessage }}</p>
+    </div>
+    <div class="dialog-footer">
+        <button (click)="redirectToArticles()" class="dialog-button">Read Articles</button>
+    </div>
+</div>

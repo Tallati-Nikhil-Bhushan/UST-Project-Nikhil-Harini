@@ -1,0 +1,53 @@
+<form (ngSubmit)="addActivity()" #activityForm="ngForm" class="p-4" novalidate>
+    <div class="mb-3">
+      <label for="activityType" class="form-label">Activity Type:</label>
+      <ng-select
+        [items]="activityTypes"
+        bindLabel="name"
+        [(ngModel)]="activityType"
+        name="activityType"
+        required
+        [searchable]="true"
+        class="form-select"
+      ></ng-select>
+    </div>
+  
+    <div class="mb-3">
+      <label for="duration" class="form-label">Duration (in minutes):</label>
+      <input
+        id="duration"
+        type="number"
+        [(ngModel)]="duration"
+        name="duration"
+        required
+        class="form-control"
+        min="1"
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="date" class="form-label">Date:</label>
+      <input
+        type="date"
+        id="date"
+        name="date"
+        [(ngModel)]="date"
+        #dateInput="ngModel"
+        [attr.max]="maxDate"
+        required
+        class="form-control"
+      />
+      <div id="dateError" style="color: red; display: none;">
+        Please select a date up to today.
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-primary w-100" [disabled]="!activityForm.valid">
+      Add Activity
+    </button>
+  
+    <div *ngIf="successMessage" class="mt-3 text-success">
+      {{ successMessage }}
+    </div>
+  </form>
+  

@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+}
+header{
+    width: 100vw;
+    min-height: 100px;
+    background: var(--faded-green);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 100px;
+    position: fixed;
+    z-index: 10;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 120px 0, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+header > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+   
+}
+#logoBox{
+    cursor: pointer;
+    padding-right: 10px;
+}
+#logoBox > span{
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--light-green);
+}
+#logout{
+    font-weight: 500;
+    border: none;
+    border-radius: 50px;
+    background-color: transparent;
+    padding: 10px 20px;
+    transition: 0.4s;
+}
+#logout:hover{
+    color: var(--light-green);
+    background-color: var(--dark-green);
+    transition: 0.4s;
+}
+#accountIcon{
+    cursor: pointer;
+    color: blue;
+}
+/* This styles the logout dialog box */
+#modal-content-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+#modal-title {
+    font-size: 20px;
+}
+#modal-footer {
+    justify-self: right;
+    align-self: end;
+}
+#modal-footer>button{
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+#modal-logout-button {
+    margin-right: 30px;
+    background-color: var(--light-warn);
+}
+#modal-cancel-button {
+    background-color: var(--faded-green);
+}
+ 
+.material-symbols-outlined{
+    font-size: 27px;
+    cursor: pointer;
+    padding: 20px;
+}
+ 
+main{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+.navigations{
+    background-color: var(--dark-green);
+    width: 15%;
+    height: 100vh;
+    color: var(--light-green);
+    position: fixed;
+    top: 60px;
+    z-index: 10;
+}
+.navigationContainer{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin: 20px 0;
+    gap: 10px;
+}
+.navigationButton{
+    padding: 10px 40px;
+    padding-left: 60px;
+    width: 270px;
+    color: var(--faded-green);
+    border: none;
+    background-color: transparent;
+    transition: 0.4s;
+    font-weight: 500;
+    text-align: left;
+    border-radius: 50%;
+    border-radius: 0 25px 25px 0;
+}
+.navigationButton:focus{
+    background-color: var(--faded-green);
+    color: var(--light-green);
+}
+.navigationButton:hover{
+    cursor: pointer;
+    background-color: var(--faded-green);
+    color: var(--light-green);
+    transition: 0.4s;
+}
+.pages{
+    width: 85%;
+    padding: 25px 37px;
+    position: absolute;
+    top: 100px;
+    left: 15%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pageContainer{
+    width: 100%;
+}
+ 

@@ -1,0 +1,74 @@
+#spring.application.name=WellnessHub
+#server.port=8081
+#
+## MySQL Database Configuration
+#spring.datasource.url=jdbc:mysql://localhost:3306/wellnesshub
+#spring.datasource.username=root
+#spring.datasource.password=root
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#
+## Hibernate Dialect
+#spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+#
+## JPA Configuration
+#spring.jpa.hibernate.ddl-auto=update
+#spirng.jpa.show.sql=true
+#
+## Enable SQL logging (optional)
+#logging.level.org.hibernate.SQL=DEBUG
+#logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+#
+#spring.cloud.gateway.discovery.locator.enabled=true
+spring:
+  application:
+    name: WellnessHub
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: DietPlanner
+            uri: http://localhost:8082
+            predicates:
+              - Path=/DietPlanner/**
+          - id: fitness
+            uri: http://localhost:8083
+            predicates:
+              - Path=/fitness/**
+          - id: MentalHealthApplication
+            uri: http://localhost:8084
+            predicates:
+              - Path=/MentalHealthApplication/**
+  datasource:
+    url: jdbc:mysql://localhost:3306/wellnesshub
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true

@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #CAF0F8; /* Fallback background color */
+}
+:root{
+    --light-green: #CAF0F8;
+    --leaf-green: #0077B6;
+    --faded-green: #00B4D8;
+    --dark-green: #03045E;
+    --light-warn: #e44848;
+    --dark-warn: #b43636;
+}
+
+/* Global styling for ng-select dropdown panel */
+.ng-select .ng-dropdown-panel {
+    background-color: white; /* Background color of the dropdown */
+    border: 1px solid #ccc; /* Border around the dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 4px; /* Rounded corners */
+    z-index: 1000; /* Ensure it appears above other elements */
+    max-height: 300px; /* Set a maximum height for the dropdown */
+    overflow-y: auto; /* Enable scrolling if the content exceeds max-height */
+  }
+  
+  /* Styling individual options in the dropdown */
+  .ng-select .ng-dropdown-panel .ng-option {
+    padding: 8px; /* Padding for each option */
+    font-size: 14px; /* Set font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  /* Hover effect for options */
+  .ng-select .ng-dropdown-panel .ng-option:hover {
+    background-color: #f0f0f0; /* Highlight the option on hover */
+  }
+  
+  /* Styling the selected option in the dropdown */
+  .ng-select .ng-dropdown-panel .ng-option-selected {
+    background-color: #e0e0e0; /* Different background for selected option */
+  }
+  
+  /* Global styling for ng-select input field */
+  .ng-select .ng-select-container {
+    width: 100%; /* Ensure it takes the full width of its container */
+    padding: 8px;
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border around the select box */
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+  }
+  
+  /* Styling the arrow/chevron icon */
+  .ng-select .ng-select-container .ng-arrow-wrapper {
+    color: #555; /* Change the color of the arrow */
+  }
+  
+  /* Placeholder text styling */
+  .ng-select .ng-select-container .ng-placeholder {
+    color: #888; /* Lighter color for placeholder text */
+    font-style: italic; /* Italic style for placeholder */
+  }
+  
+  /* Disabled state styling */
+  .ng-select.ng-select-disabled .ng-select-container {
+    background-color: #f5f5f5; /* Background color for disabled state */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+  }
+  
+  /* Dropdown panel position adjustments */
+  .ng-select .ng-dropdown-panel {
+    position: absolute; /* Ensure it’s positioned relative to the select box */
+    top: 100%; /* Place directly below the select box */
+    left: 0;
+    right: 0;
+  }
+  

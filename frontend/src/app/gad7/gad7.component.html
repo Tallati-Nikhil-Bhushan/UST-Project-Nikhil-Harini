@@ -1,0 +1,70 @@
+<!-- <div class="gad7-form">
+    <h1>GAD-7 Anxiety Test</h1>
+    <form (ngSubmit)="submitForm()">
+        <div class="question-container" *ngFor="let question of questions; let i = index">
+            <label class="question-label">{{ i + 1 }}. {{ question }}</label>
+            <div class="options">
+                <div *ngFor="let option of options">
+                    <label 
+                        class="option-label" 
+                        [ngClass]="getOptionClass(i, option.score)"
+                        (mouseenter)="hoverOption(i, option.score)"
+                        (mouseleave)="hoverOption(i, null)"
+                        (click)="selectOption(i, option.score)"
+                    >
+                        {{ option.label }}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!isFormComplete()" class="incomplete-message">
+            Please answer all the questions before submitting the form.
+        </div>
+        <button type="submit" class="submit-button" [disabled]="!isFormComplete()" >Submit</button>
+    </form>
+</div>
+
+
+<div class="anxiety-dialog-container"></div>
+<app-anxiety-dialog *ngIf="showDialog"
+                       [anxietyLevel]="anxietyLevel"
+                       [anxietyMessage]="anxietyMessage"
+                       (close)="closeDialog()">
+</app-anxiety-dialog> -->
+
+<!-- GAD-7 Form -->
+<div class="gad7-form mt-5">
+    <h1>GAD-7 Anxiety Test</h1>
+    <h4>Over the last two weeks, how often have you been bothered by any of the following problems?</h4>
+    <br>
+    <form (ngSubmit)="submitForm()">
+      <div class="question-container" *ngFor="let question of questions; let i = index">
+        <label class="question-label">{{ i + 1 }}. {{ question }}</label>
+        <div class="options">
+          <div *ngFor="let option of options">
+            <label 
+              class="option-label" 
+              [ngClass]="getOptionClass(i, option.score)"
+              (mouseenter)="hoverOption(i, option.score)"
+              (mouseleave)="hoverOption(i, null)"
+              (click)="selectOption(i, option.score)"
+            >
+              {{ option.label }}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!isFormComplete()" class="incomplete-message">
+        Please answer all the questions before submitting the form.
+      </div>
+      <button type="submit" class="submit-button" [disabled]="!isFormComplete()">Submit</button>
+    </form>
+  </div>
+  
+  <!-- Anxiety Dialog Component -->
+  <app-anxiety-dialog *ngIf="showDialog"
+                      [anxietyLevel]="anxietyLevel"
+                      [anxietyMessage]="anxietyMessage"
+                      (close)="closeDialog()">
+  </app-anxiety-dialog>
+  

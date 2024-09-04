@@ -1,0 +1,84 @@
+.container-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .container-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .container-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .fitness-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .calories-summary {
+    margin-bottom: 20px;
+  }
+  
+  .actions button {
+    margin-right: 10px;
+  }
+  
+  .container-item {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .container-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .fitness-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .calories-summary h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .progress-bar-container {
+    margin-bottom: 15px;
+  }
+  
+  .progress {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    background-color: #28a745;
+    height: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .actions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

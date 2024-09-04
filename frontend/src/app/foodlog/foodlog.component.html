@@ -1,0 +1,98 @@
+<!-- <div class="food-log-container">
+    <h2>Food Log</h2>
+    <form (ngSubmit)="submitQuery()">
+      <label for="userInput">Enter food or meal description:</label>
+      <textarea id="userInput" [(ngModel)]="userInput" name="userInput" rows="4" cols="50" required></textarea>
+  
+      <button type="submit">Get Nutritional Info</button>
+    </form>
+  
+    <div *ngIf="nutrientData">
+      <h3>{{ nutrientData.food_name }} - Nutritional Information</h3>
+      <p><strong>Serving Size:</strong> {{ nutrientData.serving_qty }} {{ nutrientData.serving_unit }} ({{ nutrientData.serving_weight_grams }} grams)</p>
+      <p><strong>Calories:</strong> {{ nutrientData.nf_calories }} kcal</p>
+      <p><strong>Total Fat:</strong> {{ nutrientData.nf_total_fat }} g</p>
+      <p><strong>Saturated Fat:</strong> {{ nutrientData.nf_saturated_fat }} g</p>
+      <p><strong>Cholesterol:</strong> {{ nutrientData.nf_cholesterol }} mg</p>
+      <p><strong>Sodium:</strong> {{ nutrientData.nf_sodium }} mg</p>
+      <p><strong>Total Carbohydrates:</strong> {{ nutrientData.nf_total_carbohydrate }} g</p>
+      <p><strong>Dietary Fiber:</strong> {{ nutrientData.nf_dietary_fiber }} g</p>
+      <p><strong>Sugars:</strong> {{ nutrientData.nf_sugars }} g</p>
+      <p><strong>Protein:</strong> {{ nutrientData.nf_protein }} g</p>
+      <p><strong>Potassium:</strong> {{ nutrientData.nf_potassium }} mg</p>
+    </div>
+  
+    <div *ngIf="errorMessage">
+      <p class="text-danger">{{ errorMessage }}</p>
+    </div>
+  </div>
+   -->
+
+   <!-- Food Log Section -->
+   <!-- <div class="card flex-fill w-100">
+    <div class="card-header bg-secondary text-white">
+      Food Log
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="submitQuery()">
+        <div class="mb-3">
+          <label for="userInput" class="form-label">Enter food or meal description:</label>
+          <textarea id="userInput" [(ngModel)]="userInput" name="userInput" rows="4" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Nutritional Info</button>
+      </form>
+
+      <div *ngIf="nutrientData" class="mt-4">
+        <h3>{{ nutrientData.food_name }} - Nutritional Information</h3>
+        <p><strong>Serving Size:</strong> {{ nutrientData.serving_qty }} {{ nutrientData.serving_unit }} ({{ nutrientData.serving_weight_grams }} grams)</p>
+        <p><strong>Calories:</strong> {{ nutrientData.nf_calories }} kcal</p>
+        <p><strong>Total Fat:</strong> {{ nutrientData.nf_total_fat }} g</p>
+        <p><strong>Saturated Fat:</strong> {{ nutrientData.nf_saturated_fat }} g</p>
+        <p><strong>Cholesterol:</strong> {{ nutrientData.nf_cholesterol }} mg</p>
+        <p><strong>Sodium:</strong> {{ nutrientData.nf_sodium }} mg</p>
+        <p><strong>Total Carbohydrates:</strong> {{ nutrientData.nf_total_carbohydrate }} g</p>
+        <p><strong>Dietary Fiber:</strong> {{ nutrientData.nf_dietary_fiber }} g</p>
+        <p><strong>Sugars:</strong> {{ nutrientData.nf_sugars }} g</p>
+        <p><strong>Protein:</strong> {{ nutrientData.nf_protein }} g</p>
+        <p><strong>Potassium:</strong> {{ nutrientData.nf_potassium }} mg</p>
+      </div>
+
+      <div *ngIf="errorMessage" class="mt-4">
+        <p class="text-danger">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="card flex-fill w-100">
+    <div class="card-header bg-secondary text-white">
+      Food Log
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="submitQuery()">
+        <div class="mb-3">
+          <label for="userInput" class="form-label">Enter food or meal description:</label>
+          <textarea id="userInput" [(ngModel)]="userInput" name="userInput" rows="4" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Nutritional Info</button>
+      </form>
+
+      <div *ngIf="nutrientData" class="mt-4">
+        <h3>{{ nutrientData.food_name }} - Nutritional Information</h3>
+        <p><strong>Serving Size:</strong> {{ nutrientData.serving_qty }} {{ nutrientData.serving_unit }} ({{ nutrientData.serving_weight_grams }} grams)</p>
+        <p><strong>Calories:</strong> {{ nutrientData.nf_calories }} kcal</p>
+        <p><strong>Total Fat:</strong> {{ nutrientData.nf_total_fat }} g</p>
+        <p><strong>Saturated Fat:</strong> {{ nutrientData.nf_saturated_fat }} g</p>
+        <p><strong>Cholesterol:</strong> {{ nutrientData.nf_cholesterol }} mg</p>
+        <p><strong>Sodium:</strong> {{ nutrientData.nf_sodium }} mg</p>
+        <p><strong>Total Carbohydrates:</strong> {{ nutrientData.nf_total_carbohydrate }} g</p>
+        <p><strong>Dietary Fiber:</strong> {{ nutrientData.nf_dietary_fiber }} g</p>
+        <p><strong>Sugars:</strong> {{ nutrientData.nf_sugars }} g</p>
+        <p><strong>Protein:</strong> {{ nutrientData.nf_protein }} g</p>
+        <p><strong>Potassium:</strong> {{ nutrientData.nf_potassium }} mg</p>
+      </div>
+
+      <div *ngIf="errorMessage" class="mt-4">
+        <p class="text-danger">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>

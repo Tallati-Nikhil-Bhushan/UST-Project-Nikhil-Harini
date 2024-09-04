@@ -1,0 +1,29 @@
+<div class="phq9-form">
+    <h1>PHQ-9 Depression Test</h1>
+    <form (ngSubmit)="submitForm()">
+        <div class="question-container" *ngFor="let question of questions; let i = index">
+            <label class="question-label">{{ i + 1 }}. {{ question }}</label>
+            <div class="options">
+                <div *ngFor="let option of options">
+                    <label 
+                        class="option-label" 
+                        [ngClass]="getOptionClass(i, option.score)"
+                        (mouseenter)="hoverOption(i, option.score)"
+                        (mouseleave)="hoverOption(i, null)"
+                        (click)="selectOption(i, option.score)"
+                    >
+                        {{ option.label }}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+
+<!-- Depression Dialog Component -->
+<app-depression-dialog *ngIf="showDialog"
+                       [depressionLevel]="depressionLevel"
+                       [depressionMessage]="depressionMessage"
+                       (close)="closeDialog()">
+</app-depression-dialog>

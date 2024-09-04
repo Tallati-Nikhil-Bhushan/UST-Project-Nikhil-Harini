@@ -1,0 +1,128 @@
+<!-- <div class="container-item container-1 flex-fill">
+    <div class="container-title">
+      Calories Burned
+    </div>
+    <div class="container-content">
+      <div class="fitness-container">
+        <div class="calories-summary">
+          <h2>Calories Burned</h2>
+          <div>
+            <p>Last 30 Days: {{ caloriesLast30Days }} kcal</p>
+            <p>Last 7 Days: {{ caloriesLast7Days }} kcal</p>
+            <p>Yesterday: {{ caloriesLastDay }} kcal</p>
+            <p>Today: {{ caloriesToday }} kcal</p>
+          </div>
+        </div>
+  
+        <div class="actions">
+          <button (click)="navigateToAddActivity()">Add Activity</button>
+          <button (click)="showActivityHistory()">Show Activity History</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container-item container-1 flex-fill">
+    <div class="container-title">Calories Burned</div>
+    <div class="container-content">
+      <div class="fitness-container">
+        <div class="calories-summary">
+          <h2>Target : {{targetCaloriesToBeBurned}} kcal Per Day</h2>
+    
+          <div *ngIf="targetCaloriesToBeBurned > 0">
+            
+            <!-- First Row -->
+            <div class="row">
+              <div class="col-md-6">
+                <p>Last 30 Days: {{ caloriesLast30Days | number:'1.2-2'}} kcal &nbsp; <span class="progress-info-text">Target: {{ targetCaloriesToBeBurned*30 | number:'1.2-2'}} kcal</span></p>
+                <div class="progress-bar-container">
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      [style.width]="calculateProgress30days(caloriesLast30Days) + '%'"
+                      [attr.aria-valuenow]="calculateProgress30days(caloriesLast30Days)"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      {{ calculateProgress30days(caloriesLast30Days) | number: '1.0-0' }}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <p>Last 7 Days: {{ caloriesLast7Days | number:'1.2-2'}} kcal &nbsp; <span class="progress-info-text">Target: {{ targetCaloriesToBeBurned*7 | number:'1.2-2'}} kcal</span></p>
+                <div class="progress-bar-container">
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      [style.width]="calculateProgress7days(caloriesLast7Days) + '%'"
+                      [attr.aria-valuenow]="calculateProgress7days(caloriesLast7Days)"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      {{ calculateProgress7days(caloriesLast7Days) | number: '1.0-0' }}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Second Row -->
+            <div class="row">
+              <div class="col-md-6">
+                <p>Yesterday: {{ caloriesLastDay | number:'1.2-2'}} kcal &nbsp; <span class="progress-info-text">Target: {{ targetCaloriesToBeBurned | number:'1.2-2'}} kcal</span></p>
+                <div class="progress-bar-container">
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      [style.width]="calculateProgress(caloriesLastDay) + '%'"
+                      [attr.aria-valuenow]="calculateProgress(caloriesLastDay)"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      {{ calculateProgress(caloriesLastDay) | number: '1.0-0' }}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <p>Today: {{ caloriesToday | number:'1.2-2'}} kcal &nbsp; <span class="progress-info-text">Target: {{ targetCaloriesToBeBurned | number:'1.2-2'}} kcal</span></p>
+                <div class="progress-bar-container">
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      [style.width]="calculateProgress(caloriesToday) + '%'"
+                      [attr.aria-valuenow]="calculateProgress(caloriesToday)"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      {{ calculateProgress(caloriesToday) | number: '1.0-0' }}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+    
+          <div *ngIf="targetCaloriesToBeBurned === 0">
+            <p class="text-danger">Target calories to be burned data is unavailable.</p>
+          </div>
+        </div>
+        <app-add-activity></app-add-activity>
+        <div class="actions">
+          <!-- <button (click)="navigateToAddActivity()">Add Activity</button> -->
+          <!-- <button (click)="showActivityHistory()">Show Activity History</button> -->
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <app-activity-details />
+  
+  
