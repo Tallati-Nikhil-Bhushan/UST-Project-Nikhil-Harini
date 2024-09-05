@@ -1,0 +1,28 @@
+<div class="chat-container form mb-5">
+  <div #messagesContainer class="messages-container">
+    <!-- <div *ngFor="let message of messagesHistory" class="message" [ngClass]="message.role">
+      {{ message.parts | convertTextToHtml}}
+    </div> -->
+    <div *ngFor="let message of messagesHistory">
+      <div *ngIf="message.role === 'user'" class="user-message message" [ngClass]="message.role">
+        {{ message.parts }}
+      </div>
+      <div *ngIf="message.role === 'model'" class="model-message message" [innerHTML]="message.parts | convertTextToHtml" [ngClass]="message.role">
+        <!-- The response is passed through the pipe here -->
+      </div>
+    </div>
+  </div>
+  
+
+  <form (ngSubmit)="sendMessage()">
+    <div class="input-container">
+      <textarea
+        [(ngModel)]="userMessage"
+        name="userMessage"
+        placeholder="Type your message here..."
+        (keydown.enter)="sendMessage()"
+      ></textarea>
+      <button type="submit" [disabled]="!userMessage">Send</button>
+    </div>
+  </form>
+</div>

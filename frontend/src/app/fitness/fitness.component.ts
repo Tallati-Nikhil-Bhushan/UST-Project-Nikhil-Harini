@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FitnessService } from '../fitness.service';
 import { Router } from '@angular/router';
+import { ActivityDetailsComponent } from '../activity-details/activity-details.component';
 
 @Component({
   selector: 'app-fitness',
@@ -16,6 +17,8 @@ export class FitnessComponent implements OnInit {
   targetCaloriesToBeBurned: number = 0;
 
   constructor(private fitnessService: FitnessService, private router: Router) {}
+
+  @ViewChild(ActivityDetailsComponent) targetComponent!: ActivityDetailsComponent;
 
   ngOnInit(): void {
     if (this.userId) {
@@ -52,5 +55,6 @@ export class FitnessComponent implements OnInit {
 
   reloadData() {
     this.ngOnInit();
+    this.targetComponent.reloadData();
   }
 }

@@ -8,11 +8,13 @@ import { HomeComponent } from './home/home.component';
 import { MealDetailsComponent } from './meal-details/meal-details.component';
 import { AddActivityComponent } from './add-activity/add-activity.component';
 import { ActivityDetailsComponent } from './activity-details/activity-details.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'chatbot', component: ChatbotComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'add-activity', component: AddActivityComponent,canActivate: [AuthGuard]},
   { path: 'activity-details', component: ActivityDetailsComponent,canActivate: [AuthGuard]},

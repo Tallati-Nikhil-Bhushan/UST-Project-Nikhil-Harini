@@ -10,7 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthInterceptor } from './auth.interceptor';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DietComponent } from './diet/diet.component';
 import { MealDetailsComponent } from './meal-details/meal-details.component';
@@ -26,6 +26,10 @@ import { Gad7Component } from './gad7/gad7.component';
 import { DepressionDialogComponent } from './depression-dialog/depression-dialog.component';
 import { ArticlesBlogComponent } from './articles-blog/articles-blog.component';
 import { AnxietyDialogComponent } from './anxiety-dialog/anxiety-dialog.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ConvertTextToHtmlPipe } from './chatbot/convert-text-to-html.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -51,7 +55,8 @@ export function tokenGetter() {
     Gad7Component,
     DepressionDialogComponent,
     ArticlesBlogComponent,
-    AnxietyDialogComponent
+    AnxietyDialogComponent,
+    ChatbotComponent
   ],
   imports: [
     NgSelectModule,
@@ -65,7 +70,11 @@ export function tokenGetter() {
     }),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterOutlet,
+    CommonModule,
+    ConvertTextToHtmlPipe,
+    ReactiveFormsModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ export class ActivityDetailsComponent implements OnInit {
   activities: any[] = []; // Replace `any` with the appropriate type
   topDates: any[] = [];
   last10daysactivities: any[] = [];
-  last10daysnoActivities: boolean = false;
+  last10daysnoActivities: boolean = true;
   noActivitiesMessage: string = '';
   topactivities: any[] = [];
   constructor(private fitnessService: FitnessService) {}
@@ -46,5 +46,9 @@ export class ActivityDetailsComponent implements OnInit {
         console.error('Error fetching top activities', error);
       }
     );
+  }
+
+  reloadData() {
+    this.ngOnInit();
   }
 }
